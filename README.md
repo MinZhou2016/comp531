@@ -1,2 +1,3 @@
-# comp531
-Homework
+# comp531 Inclass And Take-home homework
+Homework for Comp531.
+
