@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    
+    <head>
+    </head>
+    <body>
+        <h1>Pizza Guys Order Form</h1>
+        <form id="myform">
+            Name:<br/>
+            <input type = "text" name = "name" placeholder = "your name" required>
+            <br/>
+            <br/>
+            Address: #### Street Name...<br/>
+            <input type = "text" name = "address" placeholder = "delivery address" size = 60 pattern = "[0-9]+\s[A-Za-z\s]+" required>
+            <br/>
+            <br/>
+            Phone Number: 123-123-1234<br/>
+            <input type = "text" name = "phoneNumber" placeholder = "123-123-1234" pattern="[1-9][0-9]{2}-[0-9]{3}-[0-9]{4}" required>
+            <br/>
+            <br/>
+            <u>Pizza Size</u><br/>
+            <input type = "radio" name = "pizzasize" value = "large" checked>Large
+            <input type = "radio" name = "pizzasize" value = "medium">Medium
+            <input type = "radio" name = "pizzasize" value = "small">Small
+            <br/>
+            <br/>
+            <u>Pizza Toppings</u><br/>
+            <input type = "checkbox" name = "toppings" value = "sausage">Sausage
+            <input type = "checkbox" name = "toppings" value = "pepperoni">Pepperoni
+            <input type = "checkbox" name = "toppings" value = "olives">Olives
+            <input type = "checkbox" name = "toppings" value = "Onions">Onions
+            <br/>
+            <br/>
+            <input type = "submit" value = "Place Order">
+            <input type = "button" value = "clear" onclick = "clearAll()">
+            <br/>
+            <br/>
+        </form>
+        <script>
+            function clearAll(){
+                document.getElementById("myform").reset();
+            }
+        </script>
+    </body>
+    
+</html>
