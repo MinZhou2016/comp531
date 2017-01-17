@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <style>
+            #indicator{
+                color:red;
+            }
+        </style>
+        <title>Hello HTML!</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body onload="setTimeout(time,5000)">
+        <h1>Min Zhou</h1>    
+        <img src = "Min%20Zhou.jpg" alt = "my picture" width = "128" height = "150"/>
+        <br/>
+        <p>Hey! I am a Rice student. This is my second semester. I love Rice so much, It is the most beautiful school I have ever seen.<br/>
+        If you  want to learn more about <strong>Rice</strong>, Please click on the <a href = "http://www.rice.edu/" target = "_blank"> link</a> to get more information. If you also want to know more about me, <br/>here is <a href = "https://github.com/MinZhou2016" target = "_blank" >My GitHub page</a>. If you want to say something to me, please leave a message in the <em>comment area</em> below!</p>
+        <br/>
+            
+        <h3>Comment Area:</h3>  
+        <textarea rows="10" cols="30" id="comment" placeholder="say something here"></textarea>
+        <input type="button" value="Clear" onclick="textClear()">
+        <button type="submit" value="Submit">Submit</button>
+        <br/>
+        <p>Count down clock: <span id="indicator"></span></p>
+        <input type="button" value="pause" onclick="pause()">
+        <input type="button" value="resume" onclick="resume()">
+    </body>
+    <script>
+        var temp = true;
+        function textClear(){
+            document.getElementById("comment").value="";
+        }
+        function time(){
+            alert("the page will redirect when the counter reaches zero");
+            countStart();
+        }
+        function countStart(){
+            var clock = 15;
+            document.getElementById("indicator").innerHTML= clock;
+            var interval = setInterval(function(){
+                if(temp){
+                    clock--;
+                    document.getElementById("indicator").innerHTML= clock;
+                }
+                if(clock == 0){
+                    clearInterval(interval);
+                    window.location = "https://www.clear.rice.edu/comp431/sample/hello.html"
+                }
+
+            },1000) 
+        }
+        function pause(){
+            temp = false;
+        }
+        function resume(){
+            temp = true;
+        }
+    </script>
+    
+</html>
