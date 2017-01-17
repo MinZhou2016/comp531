@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<style>
+			#warning{
+				color:red;
+			}
+			.asterisk{
+                color:red;
+            }
+		</style>
+
+		<meta name="author" content="Min Zhou">
+
+	</head>
+	<body>
+	    <h1>Registration Form</h1>
+		<form action="formProcessor.html" id="resForm" method="GET">
+			<B>Account Name:</B><em>starts with a letter</em><br/>
+			<input type="text" name="AccountName" placeholder="Account Name" size = "25" pattern="[A-Za-z][A-Za-z0-9]*" required><span class="asterisk">*</span>
+			<br/>
+			<br/>
+			<B>Display Name:</B><em>starts with a letter</em><br/>
+			<input type="text" name="DisplayName" placeholder="Display Name(optional)" size = "25" pattern="[A-Za-z][A-Za-z0-9]*">
+			<br/>
+			<br/>
+			<B>Email Address:</B><br/>
+			<input type="email" name="Email" placeholder="Your Email" size = "30" required><span class="asterisk">*</span>
+			<br/>
+			<br/>
+			<B>Phone Number:</B><br/>
+			<input type="tel" name="Phone" placeholder="Phone Number" size = "30" required><span class="asterisk">*</span>
+			<br/>
+			<br/>
+			<B>Data of Birth:</B><br/>
+			<input type="date" name="Date" placeholder="Date of Birth" id="birth" required><span class="asterisk">*</span>
+			<br/>
+			<br/>
+			<B>Zip Code:</B><em>#####</em><br/>
+			<input type="text" name="Zip" placeholder="Zip Code" pattern="[0-9]{5}" required><span class="asterisk">*</span>
+			<br/>
+			<br/>
+			<B>Password:</B><br/>
+			<input type="password" name="Pass" placeholder="Password" id="firstPass" size = "40" required><span class="asterisk">*</span>
+			<br/>
+			<br/>
+			<B>Password Confirmation:</B><br/>
+			<input type="password" name="Pass2" placeholder="Password Confirmation" id="secPass" size = "40" required><span class="asterisk">*</span>
+			<br/>
+			<input type="hidden" name="TimeStamp" id="timeStamp"><span id="warning"></span>
+			<br/>
+			<input type="submit" Value="Submit" onclick="return formSubmit();">
+			<input type="button" value="Clear" onclick="formClear();">
+		</form>
+	</body>
+	<script>
+		function formSubmit(){
+
+			var res,date,birthDay,yearDiff,monthDiff,dayDiff,p1,p2;
+			res = true;
+			document.getElementById("warning").textContent = "";
+			//get the time of clicking in millies
+			date = new Date();
+			document.getElementById("timeStamp").value = date.getTime()/1000;
+
+            //see if it is more than 18 years old 
+            birthDay=new Date(document.getElementById("birth").value);
+            yearDiff=date.getFullYear()-birthDay.getFullYear();
+		    monthDiff=date.getMonth()-birthDay.getMonth();
+		    dayDiff=date.getDate()-birthDay.getDate();
+		    if(!(yearDiff>18||yearDiff==18&&monthDiff>0||yearDiff==18&&monthDiff==0&&dayDiff>=0)){
+		        document.getElementById("warning").innerHTML += "You have to be 18 years old or above!<br>";
+		        return false;  
+		    }
+
+            //password confirm
+            p1 = document.getElementById("firstPass").value;
+            p2 = document.getElementById("secPass").value;
+            if(p1 !== p2){
+            	document.getElementById("warning").innerHTML += "Passwords don't match!<br>";
+            	res = false;
+            }
+            return res;
+
+		}
+		function formClear(){
+			document.getElementById("resForm").reset();
+		}
+	</script>
+</html>

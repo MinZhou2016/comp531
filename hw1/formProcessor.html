@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+	    <meta name=“author” content=“Min Zhou”>
+	    <style type="text/css">
+			  body{
+			  font-family: Comic Sans MS;
+			  font-size: 16px;
+			  font-weight:bold
+			  -webkit-font-smoothing: antialiased;
+			  -moz-osx-font-smoothing: grayscale;
+			  }
+		</style>
+	</head>
+	<body class="center">
+		<center>
+			<h1>Form Processor Page</h1>
+			<table border="3">
+				<tr>
+					<td>Name:</td>
+					<td id="name"></td>
+				</tr>
+				<tr>
+					<td>DisplayName:</td>
+					<td id="display_name"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td id="email"></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td id="phone_number"></td>
+				</tr>
+				<tr>
+					<td>Birthday:</td>
+					<td id="birthday"></td>
+				</tr>
+				<tr>
+					<td>Zipcode:</td>
+					<td id="zipcode"></td>
+				</tr>
+				<tr>
+					<td>TimeStamp:</td>
+					<td id="timestamp"></td>
+				</tr>
+			</table>
+		</center>
+	</body>
+	<script>
+	    var account_name,display_name,email,phone_number,birthday,zipcode;
+		var timestamp,finalDate;
+		//This is a function to extract different element from the query string
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	    }
+		//get the value of every element
+		account_name = getParameterByName("AccountName");
+		display_name = getParameterByName("DisplayName");
+		email = getParameterByName("Email");
+		phone_number = getParameterByName("Phone");
+		birthday = getParameterByName("Date");
+		zipcode = getParameterByName("Zip");
+		timestamp = getParameterByName("TimeStamp");
+
+		//change the look of the timestamp,make the finalDate human readable 
+		function timeRemake(){
+            var date,year,month,day,hours,minutes,seconds;
+
+			date = new Date(timestamp * 1000);
+			year = date.getFullYear();
+			month = date.getMonth() + 1;
+			day = date.getDate();
+			hours = date.getHours();
+			minutes = date.getMinutes();
+			seconds = date.getSeconds();
+			// add '0' if it is single digits and get the final date
+			if(month < 10){
+				month = '0' + month;
+			}
+	        if(day < 10){
+	        	day = '0' + day;
+	        }
+	        if(hours < 10){
+	        	hours = '0' + hours;
+	        }
+	        if(minutes < 10){
+	        	minutes = '0' + minutes;
+	        }
+	        if(seconds < 10){
+	        	seconds = '0' + seconds;
+	        }
+	        finalDate = month+"/"+day+"/"+year+"   "+hours+":"+minutes+":"+seconds;
+   
+		};
+		timeRemake();
+		
+        // put things in the table
+        document.getElementById("name").innerHTML = account_name;
+		document.getElementById("display_name").innerHTML = display_name;
+		document.getElementById("email").innerHTML = email;
+		document.getElementById("phone_number").innerHTML = phone_number;
+		document.getElementById("birthday").innerHTML = birthday;
+		document.getElementById("zipcode").innerHTML = zipcode;
+		document.getElementById("timestamp").innerHTML = finalDate;
+
+
+	</script>
+</html>
