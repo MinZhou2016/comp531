@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Avoid Game</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Min Zhou">
+	
+	<style type="text/css">
+		.game_win{
+			top:5px;
+	    	margin: 80px;
+	    	margin-left: 40%;
+	    	text-align:center;
+			border:2px solid #a1a1a1;
+			padding:10px 40px; 
+			background:rgb(0,255,0);
+			width:200px;
+			height:70px;
+			border-radius:15px;
+			border-color:Red;
+			border-width:5px;
+			font-family: Comic Sans MS;
+	  		font-size: 16px;
+	    	font-weight:bold;
+	    	color:rgb(0,0,255);
+	    	display: none;
+		}
+		#btn{
+			width: 80px;
+			height: 25px;
+			font-weight: bold;
+
+		}
+	</style>
+</head>
+<body>
+    <p>You can press the Shift key to click !</p>
+	<button type="button" id="btn">Click Me</button>
+	<div class="game_win">
+		<span class="title">Congratulations!</span>
+		<p class="text">You won!</p>
+	</div>
+</body>
+<script type="text/javascript" src="avoid.js"></script>
+</html>
