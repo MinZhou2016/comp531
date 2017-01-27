@@ -1,0 +1,18 @@
+.warn {
+	color: red;
+	visibility: hidden;
+	font-style:italic;
+	font-family: "Times New Roman", Times, serif;
+	position:relative;
+	left:100px;
+}
+#btn_update {
+	background-color:rgb(252,136,136);
+	font-size: 1em;
+	color: rgb(255,255,255);
+}
+.card-title{
+	font-style: italic;
+	font-size: 20px;
+	font-weight: bold;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UIF-8">
+        <meta name="author" content="Min Zhou">
+        <title>Profile Page</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <center>
+        <h1>Profile Page</h1>
+        <em><li>The old information is in the third Conlumn</li></em>
+        <br/>
+            <table border="3" class="table">
+                <tr class="row">
+                    <td>
+                        <b>Display Name:</b><span id="display_name_span" class="warn">Wrong Form!</span>
+                    </td>
+                    <td>
+                        <input type="text" name="dName" id="display_name">
+                    </td>
+                    <td id="old_name">
+                        Min
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <b>Email Address:</b><span id="email_span" class="warn">Wrong Form!</span>
+                    </td>
+                    <td>
+                        <input type="text" name="Email" id="email">
+                    </td>
+                    <td id="old_email">
+                        abc@rice.edu
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <b>Phone Number:</b><span id="phone_number_span" class="warn">Wrong Form!</span>
+                    </td>
+                    <td>
+                        <input type="text" name="pNumber" id="phone_number">
+                    </td>
+                    <td id="old_number">
+                        123-123-1234
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <b>Zipcode:</b><span id="zipcode_span" class="warn">Wrong Form!</span>
+                    </td>
+                    <td>
+                        <input type="text" name="zip" id="zipcode">
+                    </td>
+                    <td id="old_zip">
+                        00000
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <b>Password:</b>
+                    </td>
+                    <td>
+                        <input type="text" name="pass" id="pass_word">
+                    </td>
+                    <td id="old_password">
+                        123456
+                    </td>
+                </tr>
+                <tr class="row">
+                    <td>
+                        <b>Password Confirmation:</b><span id="password_confirm_span" class="warn">Your Password does not match!</span>
+                    </td>
+                    <td>
+                        <input type="text" name="passCon" id="password_confirm">
+                    </td>
+                    <td id="old_passConfirm">
+                        123456
+                    </td>
+                </tr>
+
+            </table>
+            <br/>
+            <button type="button" id="btn_update">Update</button>
+            <a href="main.html" id="main_link" role="button">Back to Main Page</a>
+        </center>
+    </body>
+    <script type="text/javascript" src="profile.js"></script>
+</html>
