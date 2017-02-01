@@ -1,4 +1,4 @@
-Inclass Fetch Exercise
+//Inclass Fetch Exercise
 // ======================
 //
 // Navigate to https://webdev-dummy.herokuapp.com/sample
@@ -35,28 +35,22 @@ Inclass Fetch Exercise
 
     function countWords(url) {
         // IMPLEMENT ME
-        return fetch(url).then(res=>res.json())
-            .then(res => {
-                var ary = {};
-                ary['articles'].forEach(function(element){
-                    ary[element['_id']] = element['text'].split(" ").length;
-                })
-                // return an object { articleId: wordCount }
-                return ary;
-            })
+        return fetch(url).then(res =>res.json())
+            .then(res => word(res))
+    }
+    function word(res){
+        var ary = {};
+        res['articles'].forEach(function(element){
+            ary[element['_id']] = element['text'].split(" ").length;
+        })
+        // return an object { articleId: wordCount }
+        return ary;
     }
 
     function countWordsSafe(url) {
         // IMPLEMENT ME
         return fetch(url).then(res=>res.json())
-            .then(res => {
-                var ary = {};
-                ary['articles'].forEach(function(element){
-                    ary[element['_id']] = element['text'].split(" ").length;
-                })
-                // return an object { articleId: wordCount }
-                return ary;
-            })
+            .then(res => word(res))
             .catch(err => {
                 return {}
             })
