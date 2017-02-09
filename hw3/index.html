@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quick Finger</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Min Zhou">
+	<meta name="discription" content="game">
+	<link rel="stylesheet" type="text/css" href="quickFinger.css">
+</head>
+<body>
+    <audio id="music" preload="auto">
+	 	<source src="http://www.8king.cn/myproject-multi/music/bg.m4a" type="audio/ogg">
+	</audio>
+	<audio id="musicClick" preload="auto">
+	 	<source src="http://www.8king.cn/myproject-multi/music/1.wav" type="audio/ogg">
+	</audio>
+	<center>
+	    <li><em>Click fruit, Avoid bomb</em></li>
+	    <li><em>Generate speed of fruit increases as time goes by</em></li>
+	</center>
+	<div id = "record">
+		<div>
+			<p1>BestScore:  <span id = "bestScore"></span></p1><br>
+			<p1>Click Number:  <span id = "clickNum"></span></p1>
+		</div>
+	</div>
+	<div class="container" id="container">
+		<div id="start">
+			<div class="head_name">Quick Finger</div>
+			<div class="start_inner">Start Game!</div>
+		</div>
+		<div class="status" id="status"></div>
+		<div class="score" id="score">0</div>
+		<div class="time" id="time">90</div>
+		<div class="click" id="clickTime">0</div>
+
+		<div class="gameRestart" id="gameRestart">Restart</div>
+		<div id="gameWindow">
+			<canvas width="600" height="700" id="canvas"></canvas>
+	    </div>	
+	</div>
+</body>
+<script type="text/javascript" src="quickFinger.js"></script>
+</html>

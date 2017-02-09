@@ -1,0 +1,123 @@
+.container{
+	overflow: hidden;
+    position: absolute;
+    left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 600px;
+	height: 700px;
+	background: #000;
+	background: url("image/apple.jpg");
+	background-size: 100% 100%; 
+	border: 2px solid #fff;
+	z-index: -100;
+}
+#record{
+	font-size: 25px;
+	width: 30%;
+	height: 5px;
+	position: absolute;
+	top: 10px;
+	margin: auto;
+	color: red;
+
+}
+.score{
+	font-size: 16px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: 0;
+	padding: 10px 15px;
+	color: #fff;
+	background: rgba(166,226,46,0.5);
+}
+.score:before{content:"Score:";}
+.time {
+	font-size: 16px;
+	padding: 10px 15px;
+	left: 0;
+	top: 0;
+	border: 0;		
+	color: #fff;
+	background: rgba(249,38,76,0.5);	
+	position: absolute;
+}
+.time:before{content:"Time:";}
+.click:before{content:"clickNum:";}
+.click{
+	font-size: 16px;
+	position: absolute;
+	right: 85px;
+	top: 0;
+	border: 0;
+	padding: 10px 15px;
+	color: #fff;
+	background: rgba(166,226,46,0.5);
+}
+.status{
+	width: 100%;
+	text-align: center;
+	font-size: 16px;
+	position: absolute;
+	right: 0;
+	top: 150px;
+	border: 0;
+	color: #fff;
+	font-size: 40px;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de;
+}
+#start{
+	width: 100%;
+	height: 100%;
+	line-height: 100px;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border: 0;
+	margin: auto;
+	color: #fff;
+	z-index: 1000;
+	text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de;
+	background: url("image/wood.jpg");
+	background-size: 100% 100%;
+	z-index: 1000000000000;
+}
+.head_name{
+	font-size: 56px;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	bottom: 450px;
+	margin: auto;	
+	text-shadow: none;	
+	}
+.start_inner{
+	font-size: 36px;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	left: 0;
+	top: 50px;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 10000001;
+}
+.gameRestart{
+	font-size: 16px;
+	position: absolute;
+	right: 0;
+	top: 50px;
+	border: 0;
+	padding: 10px 15px;
+	color: #fff;
+	z-index: 10000;	
+	cursor: pointer;
+}
