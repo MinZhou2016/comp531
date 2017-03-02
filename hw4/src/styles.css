@@ -1,0 +1,39 @@
+body{
+	background-color: #DCDCDC;
+}
+#bar{
+	background-color: #483D8B;
+	color:white;
+	font-family: "Times New Roman", Times, serif;
+}
+#btn1{
+	background-color:#483D8B;
+	color:white;
+}
+#login{
+	margin-top: 4%;
+	font-style: italic;
+}
+#central{
+	margin-top: 8%;
+}
+#register{
+	margin-top: 15px;
+}
+.img-responsive{
+	height: 100%;
+	width: 85%;
+}
+#reg_frm_btn{
+    margin-left:auto;
+    margin-right:auto;
+    width:40%;
+}
+#contain-setting img{
+        height: 128px;
+        width: 128px;
+        padding: 8px;
+}
+.navbar{
+	background-color: blue;
+}
