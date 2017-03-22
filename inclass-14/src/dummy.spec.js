@@ -91,10 +91,40 @@ describe('Validate login', () => {
 
         // IMPLEMENT ME
         //   * mock the AJAX request to PUT headline
+        mock(`${url}/login`, { 
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+        })
+        mock(`${url}/headlines`, {
+            headers: {'Content-Type': 'application/json'},
+            json: {
+                headlines: [{username: 'hi', headline:'ok'}]
+            }
+        })
+
+        login().then(_ => {
+            expect(div.innerHTML)
+                .to.eql('you are logged in as hi "ok"')
+        })
+        
+        const newHeadline = 'newHead';
+        
+        mock(`${url}/headline`, { 
+            method: 'PUT',          
+            headers: {'Content-Type': 'application/json'},
+            json: {
+                username: 'hi',
+                headline: newHeadline
+            }
+
+        })
         //   * update the headline by calling updateHeadline(...)
         //   * Verify the new value of the headline in div.innerHTML
-
-        done(new Error('not implemented'))
+        updateHeadline(newHeadline).then(_ => {
+            expect(div.innerHTML).to.eql('you are logged in as hi "newHead"')
+        })
+        .then(done)
+        .catch(done)
     })
 
 })

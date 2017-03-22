@@ -77,11 +77,13 @@ const toggle = (show) => {
 }
 
 const updateHeadline = (headline) => {
-    resource('PUT', 'headline', { headline }).then((response) => {
+    return resource('PUT', 'headline', { headline }).then((response) => {
         console.log(`New headline ${response.headline}`)
         // IMPLEMENT ME
         //   * Update the headline shown in the #message box
+        const box = document.querySelector("#message")
         // FYI response.headline = { username, headline }
+        box.innerHTML = `you are logged in as ${response.username} "${response.headline}"`
     })
 }
 

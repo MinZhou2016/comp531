@@ -1,0 +1,4 @@
+
+> starter@1.0.0 e2e:base /Users/minzhou/Documents/comp531/inclass-14
+> mocha --opts e2e/mocha.opts e2e/*.spec.js "--reporter" "xunit"
+
