@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/reducers.spec.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> reducers.spec.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.13% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>9/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/20</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {expect} from 'chai'
+&nbsp;
+import Action from './actions'
+import Reducer, {errors, articles} from './reducers'
+import {filterFunction} from './components/article/articlesView'
+&nbsp;
+&nbsp;
+describe('Validate reducer (no fetch requests here)', <span class="fstat-no" title="function not covered" >()=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >	i</span>t('should initialize state', <span class="fstat-no" title="function not covered" >()=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >		e</span>xpect(Reducer(undefined,{})).to.eql({
+			pageState: {page: ''},
+		    errors: {addFollowerError : '',updateFileError: '',updateFileSuccess:''},
+		    showComponent: {headlineEditShow: false,showFollowerInput: false},
+		    activeArticle: {id: '',showCom: false,showEdit: false },
+		    articles:{articles:{},searchKeyword:'', avatars: {} },
+		    profile: {username:'', headline: '', avatar: '', zipcode: '', email: '', dob: ''},
+		    followers:{ followers: {}}
+		})
+	})
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	i</span>t('should state success (for displaying success message to user)',<span class="fstat-no" title="function not covered" >()=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		e</span>xpect(errors(undefined,{type:Action.UPDATE_PROFILE_SUCCESS, payload:'success message'}))
+		.to.eql({addFollowerError : '',updateFileError: '',updateFileSuccess:'success message'})
+	})
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	i</span>t('should state error (for displaying error message to user)',<span class="fstat-no" title="function not covered" >()=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		e</span>xpect(errors(undefined,{type:Action.UPDATE_PROFILE_ERROR, payload:'error message'}))
+		.to.eql({addFollowerError :'',updateFileError: 'error message',updateFileSuccess:''})
+	})
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	i</span>t('should set the articles',<span class="fstat-no" title="function not covered" >()=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		e</span>xpect(articles(undefined,{type:Action.UPDATE_ARTICLES, newArticles:{
+			1:{_id:1, text:'Becoming a web developer', author:'mz22',date:'03/22/2017'}
+		}}))
+		.to.eql({searchKeyword:'', articles:{1:{_id:1, text:'Becoming a web developer', author:'mz22',date:'03/22/2017'}}, avatars: {}})
+	})
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	i</span>t('should set the search keyword',<span class="fstat-no" title="function not covered" >()=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		e</span>xpect(articles(undefined,{type:Action.SEARCH_KEYWORD, keyword:'search keyword'}))
+		.to.eql({articles:{}, searchKeyword:'search keyword', avatars: {}})
+	})
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	i</span>t('should filter displayed articles by the search keyword',<span class="fstat-no" title="function not covered" >()=&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		c</span>onst articles = {1:{_id:1, text:'hello world!', author:'mz22', date:'03/22/2016'},
+						  2:{_id:2, text:'hello javascript', author:'mz22', date:'03/22/2016'}}
+<span class="cstat-no" title="statement not covered" >		c</span>onst keyword = 'world'
+<span class="cstat-no" title="statement not covered" >		e</span>xpect(filterFunction(articles,keyword)).to.eql([{_id:1, text:'hello world!', author:'mz22', date:'03/22/2016'}]);
+	})
+})</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 22 2017 23:40:09 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

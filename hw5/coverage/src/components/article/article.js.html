@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/article/article.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/components/article/</a> article.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.76% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.62% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>8/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import moment from 'moment';
+import { editArticle } from './articleActions';
+import Comment from './comment';
+import Action from '../../actions';
+&nbsp;
+const Article = <span class="fstat-no" title="function not covered" >({_id,date,avatar,author,username,text,comments,editArticle,activeId,activeShow,activeEdit,forceActive}) =&gt; <span class="cstat-no" title="statement not covered" >{</span></span>
+	
+<span class="cstat-no" title="statement not covered" >	l</span>et newArticle,newComment;
+	
+<span class="cstat-no" title="statement not covered" >	c</span>onst articleDate = moment(new Date(date));
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	c</span>onst postNewComment = <span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		if(newComment &amp;&amp; newComment.value){</span>
+<span class="cstat-no" title="statement not covered" >			e</span>ditArticle(_id,newComment.value,-1);
+<span class="cstat-no" title="statement not covered" >			n</span>ewComment.value='';
+		}
+	}
+<span class="cstat-no" title="statement not covered" >		r</span>eturn (
+			&lt;div className="container"&gt;
+				&lt;div className="media"&gt;
+				  &lt;div className="media-left media-top"&gt;
+				      &lt;img className="media-object img-circle" src={avatar} alt="Image-coming..." /&gt;
+				  &lt;/div&gt;
+				  &lt;div className="media-body"&gt;
+				    &lt;h4 className="media-heading"&gt;{author}&lt;/h4&gt;
+				    &lt;h6 className="media-heading"&gt;{articleDate.format('MM-DD-YYYY')} {articleDate.format('HH:mm:ss')}&lt;/h6&gt;
+				    &lt;div onInput={<span class="fstat-no" title="function not covered" >(event) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				    	if(event.target.innerText !== text){</span>
+<span class="cstat-no" title="statement not covered" >				    		n</span>ewArticle = event.target.innerText;
+				    	}
+				    }}
+					     contentEditable={username === author}
+					     dangerouslySetInnerHTML={{__html: text}}
+					     title={username == author ? 'click to edit' : ''}&gt;
+					&lt;/div&gt;
+				  &lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div className="btn-group btn-group-justified" role="group" aria-label="..."&gt;
+				  &lt;div className="btn-group" role="group"&gt;
+				    &lt;button type="button" className="btn btn-default" onClick={<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				    	if(_id == activeId){</span>
+<span class="cstat-no" title="statement not covered" >				    		f</span>orceActive(_id,!activeShow,activeEdit);
+				    	}else {
+<span class="cstat-no" title="statement not covered" >				    		f</span>orceActive(_id,true,false);
+				    	}
+				    }}&gt;Comments&lt;/button&gt;
+				  &lt;/div&gt;
+				  &lt;div className="btn-group" role="group"&gt;
+				    &lt;button type="button" className="btn btn-default" onClick={<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				    	if(_id == activeId){</span>
+<span class="cstat-no" title="statement not covered" >				    		f</span>orceActive(_id,activeShow,!activeEdit);
+				    	} else {
+<span class="cstat-no" title="statement not covered" >				    		f</span>orceActive(_id,false,true);
+				    	}
+				    }}&gt;Add Comment&lt;/button&gt;
+				  &lt;/div&gt;
+				  {
+				  	!(username === author)? '':
+				  	&lt;div className="btn-group" role="group"&gt;
+				    	&lt;button type="button" className="btn btn-default" onClick={<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				    		if(newArticle &amp;&amp; newArticle !== ''){</span>
+<span class="cstat-no" title="statement not covered" >				    			e</span>ditArticle(_id,newArticle);
+<span class="cstat-no" title="statement not covered" >				    			n</span>ewArticle = '';
+				    		}
+				    	}}&gt;Edit&lt;/button&gt;
+				    &lt;/div&gt; 
+				  }
+				&lt;/div&gt;
+				&lt;div className='container'&gt;
+					{
+						!(activeId == _id &amp;&amp; activeShow) ?'':
+						comments.sort(<span class="fstat-no" title="function not covered" >(a,b) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >				          if (a.date &lt; b.date)</span>
+<span class="cstat-no" title="statement not covered" >				            r</span>eturn 1
+<span class="cstat-no" title="statement not covered" >				          if (a.date &gt; b.date)</span>
+<span class="cstat-no" title="statement not covered" >				            r</span>eturn -1
+<span class="cstat-no" title="statement not covered" >				          r</span>eturn 0
+				        }).map(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>comment) =&gt;
+				            &lt;Comment key={comment.commentId} articleId={_id} username={username}
+				              commentId={comment.commentId} author={comment.author} date={comment.date}
+				              text={comment.text} avatar={comment.avatar} /&gt;
+				        )
+					}
+				&lt;/div&gt;
+				{
+					!(activeId == _id &amp;&amp; activeEdit) ?'':
+					&lt;div className="form-group"&gt;
+						&lt;textarea id="newComment" className="form-control" rows="2" placeholder="Post your comments here" 
+						ref={<span class="fstat-no" title="function not covered" >(node) =&gt; {<span class="cstat-no" title="statement not covered" ></span>n</span>ewComment= node}}&gt;
+						&lt;/textarea&gt;
+						&lt;button className="btn btn-primary pull-right" onClick={postNewComment}&gt;Post&lt;/button&gt;
+					&lt;/div&gt;
+				}
+			&lt;/div&gt;
+		)
+}
+export default connect(
+<span class="fstat-no" title="function not covered" >	(state) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		r</span>eturn{
+			activeId: state.activeArticle.id,
+			activeShow: state.activeArticle.showCom,
+			activeEdit: state.activeArticle.showEdit
+		}
+	},
+<span class="fstat-no" title="function not covered" >	(dispatch) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >		r</span>eturn {
+			editArticle: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>articleId,message,commentId) =&gt; dispatch(editArticle(articleId,message,commentId)),
+			forceActive: <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>id,show,edit) =&gt; dispatch({type: Action.FORCE_ACTIVE,id: id, show: show,edit:edit})
+		}
+	}
+)(Article);
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Mar 22 2017 23:40:09 GMT-0500 (CDT)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
