@@ -5,7 +5,7 @@ import { editArticle } from './articleActions';
 import Comment from './comment';
 import Action from '../../actions';
 
-const Article = ({_id,date,avatar,author,username,text,comments,editArticle,activeId,activeShow,activeEdit,forceActive}) => {
+const Article = ({_id,date,avatar,author,username,text,comments,editArticle,activeId,activeShow,activeEdit,forceActive,img}) => {
 	
 	let newArticle,newComment;
 	
@@ -35,6 +35,11 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 					     dangerouslySetInnerHTML={{__html: text}}
 					     title={username == author ? 'click to edit' : ''}>
 					</div>
+					{!img ?'':
+						<div className="media-left media-top">
+					      <img className="media-object img-thumnail" src={img} alt="Image-coming..." />
+					    </div>
+				    }
 				  </div>
 				</div>
 				<div className="btn-group btn-group-justified" role="group" aria-label="...">
