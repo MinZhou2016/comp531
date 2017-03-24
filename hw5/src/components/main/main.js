@@ -11,7 +11,7 @@ const Main = () =>{
 						<HeadLine />
 						<Followers />
 					</div>
-					<div className="col-md-8">
+					<div className="col-md-9">
 						<ArticlesView />
 					</div>
 				</div>

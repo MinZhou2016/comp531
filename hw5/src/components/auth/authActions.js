@@ -7,10 +7,10 @@ import { fetchProfile, validateProfile } from '../profile/profileActions'
 export function initialVisit() {
 
     return (dispatch) => {
-        // try to log in
         resource('GET', 'headlines').then((response) => {
             dispatch(navToMain())
-            dispatch({type: Action.UPDATE_HEADLINE,
+            dispatch({
+                type: Action.UPDATE_HEADLINE,
                 username: response.headlines[0].username,
                 headline: response.headlines[0].headline
             })
@@ -18,7 +18,6 @@ export function initialVisit() {
             dispatch(fetchFollowers())
             dispatch(fetchArticles())
         }).catch((err) => {
-            // that's okay
         })
     }
 }

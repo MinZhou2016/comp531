@@ -1,13 +1,14 @@
 import React,{PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { fetchArticles } from '../article/articleActions'
 import {addFollower, delFollower,showInputBar} from './followingActions';
 
-const Followers = ({followers,error,delFollower,addFollower,showFollowerInput,showInputBar}) => {
+const Followers = ({followers,error,delFollower,addFollower,showFollowerInput,showInputBar,fetchArticles}) => {
 
 	let newFollower;
 		return (
 			<div>
-			<ul>
+			<ul className="follower">
 				<li><h4>Follower List <i className="fa fa-plus" onClick={() => showInputBar()}></i></h4></li>
 				<li>{!showFollowerInput ? '':
 						<form className="form-froup" onSubmit={(event) => {
@@ -17,6 +18,7 @@ const Followers = ({followers,error,delFollower,addFollower,showFollowerInput,sh
 								newFollower.value = '';
 								if(error.length === 0){
 									showInputBar();
+									fetchArticles();
 								}
 							}
 						}}>
@@ -34,11 +36,16 @@ const Followers = ({followers,error,delFollower,addFollower,showFollowerInput,sh
 					        <div className="col-md-3 col-xs-3">
 					            <img className="img-follower img-thumbnail" alt="Image-coming..." src={ follower.avatar }/>
 					        </div>
-					        <div className="col-md-9 col-xs-9">
+					        <div className="col-md-7 col-xs-7">
 					            <div><strong>{ follower.name }</strong></div>
 					            <div><em>{ follower.headline }</em></div>
 					        </div>
-					        <span><i className="fa fa-trash pull-right" onClick={() => delFollower(follower.name) }></i></span>
+					        <div className="col-md-2 col-xs-2">
+						        <i className="fa fa-trash pull-right" onClick={() => {
+						        	delFollower(follower.name);
+						        	fetchArticles();
+						        }}></i>
+					        </div>
 					    </div> 
 				)}</li>
 			</ul>
@@ -67,7 +74,8 @@ export default connect(
 		return {
 			delFollower: (name) => dispatch(delFollower(name)),
 			addFollower: (name) => dispatch(addFollower(name)),
-			showInputBar: () => dispatch(showInputBar())
+			showInputBar: () => dispatch(showInputBar()),
+			fetchArticles: () => dispatch(fetchArticles())
 		}
 	}
 )(Followers)

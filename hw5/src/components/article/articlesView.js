@@ -9,16 +9,18 @@ const ArticlesView = ({articles,username,searchKeyword}) => {
 	return (
 		<div>
 			<NewArticle />
-			<form className="form-group">
-					<input type="text" className="form-control" placeholder="Input the keyword" 
-					ref={(node) => keyword = node } 
-					onChange={() => searchKeyword(keyword.value)}/>
-			</form>
+			<div className="form-group search">
+				<input type="text" className="form-control" placeholder="Input the keyword" 
+						ref={(node) => keyword = node } 
+						onChange={() => searchKeyword(keyword.value)}/>
+			</div>
 			{ articles.sort((a,b) => {
-		        if (a.date < b.date)
+		        if (a.date < b.date){
 		          return 1
-		        if (a.date > b.date)
+		        }
+		        if (a.date > b.date){
 		          return -1
+		        }
 		        return 0
 		      }).map((article) =>
 		        <Article key={article._id} _id={article._id} username={username} author={article.author}

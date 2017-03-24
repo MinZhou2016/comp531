@@ -82,7 +82,7 @@ export function resource(method, endpoint, payload, submitJson = true) {
             const message = `Error in ${method} ${endpoint} ${JSON.stringify(response.json())}`
             throw new Error(message)
         } else {
-            return response.json()
+            return (response.headers.get('Content-Type').indexOf('json') > 0) ? response.json() : response.text()
         }
     })
 }

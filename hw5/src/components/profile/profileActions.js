@@ -69,7 +69,7 @@ function updateField(field, value) {
                 const action = { type: Action.UPDATE_PROFILE }                
                 action[field] = response[field]
                 if (field == 'password')
-                    dispatch(updateError('successfully update the password, but will not persist'))
+                    dispatch(updateError('successfully update the password'))
                 else
                     dispatch(action)
             })

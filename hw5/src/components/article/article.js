@@ -18,7 +18,7 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 		}
 	}
 		return (
-			<div className="container">
+			<div>
 				<div className="media">
 				  <div className="media-left media-top">
 				      <img className="media-object img-circle" src={avatar} alt="Image-coming..." />
@@ -72,11 +72,13 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 					{
 						!(activeId == _id && activeShow) ?'':
 						comments.sort((a,b) => {
-				          if (a.date < b.date)
-				            return 1
-				          if (a.date > b.date)
-				            return -1
-				          return 0
+						    if(a.date < b.date){
+								return 1;
+							};
+				            if(a.date > b.date){
+				            	return -1;
+				            }
+				            return 0
 				        }).map((comment) =>
 				            <Comment key={comment.commentId} articleId={_id} username={username}
 				              commentId={comment.commentId} author={comment.author} date={comment.date}

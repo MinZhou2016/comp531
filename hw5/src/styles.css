@@ -28,6 +28,7 @@ b{
 
 }
 li{
+	border: 3px solid rgba(0,0,0,0);
 
 }
 
@@ -79,6 +80,20 @@ textarea:focus{
 }
 .main{
 	margin-top: 50px;
+}
+ul.follower{
+	margin-top: 50px;
+	border: 3px solid rgba(0,0,0,0);
+}
+.search{
+	margin:10px;
+}
+.postButton{
+	float:right;
+}
+.media-body{
+	border: 3px solid rgba(0,0,0,0);
+	margin: 15px;
 }
 
 
