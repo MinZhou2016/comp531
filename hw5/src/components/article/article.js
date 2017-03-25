@@ -4,10 +4,13 @@ import moment from 'moment';
 import { editArticle } from './articleActions';
 import Comment from './comment';
 import Action from '../../actions';
+import { sortActions } from './articlesView';
 
 const Article = ({_id,date,avatar,author,username,text,comments,editArticle,activeId,activeShow,activeEdit,forceActive,img}) => {
 	
 	let newArticle,newComment;
+
+	const sortComments = sortActions(comments);
 	
 	const articleDate = moment(new Date(date));
 
@@ -76,15 +79,7 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 				<div className='container'>
 					{
 						!(activeId == _id && activeShow) ?'':
-						comments.sort((a,b) => {
-						    if(a.date < b.date){
-								return 1;
-							};
-				            if(a.date > b.date){
-				            	return -1;
-				            }
-				            return 0
-				        }).map((comment) =>
+						sortComments.map((comment) =>
 				            <Comment key={comment.commentId} articleId={_id} username={username}
 				              commentId={comment.commentId} author={comment.author} date={comment.date}
 				              text={comment.text} avatar={comment.avatar} />

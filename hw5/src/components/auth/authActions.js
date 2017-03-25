@@ -4,29 +4,15 @@ import { fetchFollowers } from '../main/followingActions'
 import { fetchArticles } from '../article/articleActions'
 import { fetchProfile, validateProfile } from '../profile/profileActions'
 
-export function initialVisit() {
-
-    return (dispatch) => {
-        resource('GET', 'headlines').then((response) => {
-            dispatch(navToMain())
-            dispatch({
-                type: Action.UPDATE_HEADLINE,
-                username: response.headlines[0].username,
-                headline: response.headlines[0].headline
-            })
-            dispatch(fetchProfile())
-            dispatch(fetchFollowers())
-            dispatch(fetchArticles())
-        }).catch((err) => {
-        })
-    }
-}
 
 export function localLogin(username,password) {
     return (dispatch) => {
         resource('POST', 'login', { username,password})
         .then((response) => {
-            dispatch({type: Action.LOGIN_LOCAL, username: response.username})
+            dispatch({
+                type: Action.LOGIN_LOCAL, 
+                username: response.username
+            })
             dispatch(initialVisit())
         }).catch((err) => {
             dispatch(updateError(`There was an error logging in as ${username}`))
@@ -41,6 +27,23 @@ export function logout() {
         .catch((err) => {
             dispatch({type: Action.LOGIN_LOCAL, username: undefined})
             dispatch(navToOut())
+        })
+    }
+}
+export function initialVisit() {
+
+    return (dispatch) => {
+        resource('GET', 'headlines').then((response) => {
+            dispatch(navToMain())
+            dispatch({
+                type: Action.UPDATE_HEADLINE,
+                username: response.headlines[0].username,
+                headline: response.headlines[0].headline
+            })
+            dispatch(fetchProfile())
+            dispatch(fetchFollowers())
+            dispatch(fetchArticles())
+        }).catch((err) => {
         })
     }
 }

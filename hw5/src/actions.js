@@ -68,6 +68,7 @@ export function headlineEdit() {
 
 
 
+
 export const url = 'https://webdev-dummy.herokuapp.com';
 
 export function resource(method, endpoint, payload, submitJson = true) {

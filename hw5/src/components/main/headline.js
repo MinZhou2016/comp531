@@ -5,6 +5,15 @@ import {headlineEdit} from '../../actions';
 
 const HeadLine = ({username,avatar,headline,headlineEditShow,updateHeadline,headlineEdit}) =>{
 	let newHeadline;
+	
+	const onFormSubmit = (event) => {
+		event.preventDefault();
+	    if(newHeadline && newHeadline.value){
+			updateHeadline(newHeadline.value);
+			newHeadline.value ='';
+			headlineEdit();
+		}
+	}
 	return(
 		<div>
 			<ul>
@@ -15,14 +24,7 @@ const HeadLine = ({username,avatar,headline,headlineEditShow,updateHeadline,head
 				<li>Headline:</li>
 				<li><b>{headline}</b><span className="glyphicon glyphicon-edit" aria-hidden="true" onClick={() => headlineEdit()}></span></li>
 				{!headlineEditShow ? '':
-					<form className="form-froup" onSubmit={(event) => {
-						event.preventDefault();
-						if(newHeadline && newHeadline.value){
-							updateHeadline(newHeadline.value);
-							newHeadline.value ='';
-							headlineEdit();
-						}
-					}}>
+					<form className="form-froup" onSubmit={onFormSubmit}>
 						<input className="form-control" type="text" placeholder="Change the headline" ref={(node) => { newHeadline = node }}  />
 						<input type="submit" className="btn btn-warning btn-xs" value="Update"/>
 					</form>

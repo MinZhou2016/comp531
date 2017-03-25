@@ -1,5 +1,6 @@
 import Promise from 'bluebird';
 import Action, { resource, addFollowerError } from '../../actions';
+import { fetchArticles } from '../article/articleActions'
 
 export function showInputBar(){
       return {
@@ -25,6 +26,7 @@ export function fetchFollowers(method,name){
 			if (method == 'PUT' && r.following.indexOf(name) < 0) {
                 return dispatch(addFollowerError(`${name} is not a valid user`))
             }
+            dispatch(addFollowerError(''));
             //transfer array to string 
             const followerList = r.following.join(',');
             // transfer array to object
@@ -57,7 +59,7 @@ export function fetchFollowers(method,name){
 
             Promise.all([headline, avatar]).then(() => {
             	dispatch({type: Action.UPDATE_FOLLOWER, followers});
-            })
+            }).then(() => {dispatch(fetchArticles())})
 
 		})
 		.catch((err) => {

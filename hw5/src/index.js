@@ -14,7 +14,7 @@ import App from './components/app'
 
 const logger = createLogger()
 
-let store = createStore(Reducer, applyMiddleware(logger,thunkMiddleware))
+let store = createStore(Reducer, applyMiddleware(thunkMiddleware))
 render(
     <Provider store={store}>
         <App />

@@ -5,10 +5,9 @@ import { updateProfile } from './profileActions'
 
 const ProfileForm = ({updateProfile,olddob,oldEmail,oldZipcode}) => {
     let email,zipcode,password,pwconf;
-
-    return (
-        <form onSubmit={(e) => {
-            e.preventDefault();
+    
+    const onFormSubmit = (event) => {
+         event.preventDefault();
             const payload = {
                 email:email.value == oldEmail ? '' : email.value,
                 dob: '',
@@ -16,8 +15,11 @@ const ProfileForm = ({updateProfile,olddob,oldEmail,oldZipcode}) => {
                 password:password.value,
                 pwconf:pwconf.value
             }
-            updateProfile(payload);
-        }}>
+        updateProfile(payload);
+    }
+
+    return (
+        <form onSubmit={onFormSubmit}>
             
             <div className="form-group row">
                 <label className="col-sm-3 form-control-label" htmlFor="dob">Birth (No Changed)</label>

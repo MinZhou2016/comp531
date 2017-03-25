@@ -5,6 +5,8 @@ import { searchKeyword } from './articleActions';
 import Article from './article';
 
 const ArticlesView = ({articles,username,searchKeyword}) => {
+	
+	const sortArticles = sortActions(articles);
 	let keyword = ''
 	return (
 		<div>
@@ -14,15 +16,7 @@ const ArticlesView = ({articles,username,searchKeyword}) => {
 						ref={(node) => keyword = node } 
 						onChange={() => searchKeyword(keyword.value)}/>
 			</div>
-			{ articles.sort((a,b) => {
-		        if (a.date < b.date){
-		          return 1
-		        }
-		        if (a.date > b.date){
-		          return -1
-		        }
-		        return 0
-		      }).map((article) =>
+			{ sortArticles.map((article) =>
 		        <Article key={article._id} _id={article._id} username={username} author={article.author}
 		          date={article.date} avatar={article.avatar} img={article.img}  text={article.text}
 		          comments={article.comments}/>
@@ -40,7 +34,7 @@ ArticlesView.propTypes = {
 }
 export function filterFunction(oldArticles, keyword){
 
-	const articleList = Object.keys(oldArticles).map((_id)=> oldArticles[_id]).sort((a,b)=>a.date===b.date?0:a.date<b.date?1:-1);
+	const articleList = sortActions(Object.keys(oldArticles).map((_id)=> oldArticles[_id]))
 	
 	if(keyword && keyword.length !==0){
 	    return articleList.filter((item)=>{
@@ -49,6 +43,17 @@ export function filterFunction(oldArticles, keyword){
 	    })
 	  }
 	  return articleList;
+}
+export function sortActions(items){
+	return items.sort((a,b) => {
+		if (a.date < b.date){
+		          return 1
+		        }
+		        if (a.date > b.date){
+		          return -1
+		        }
+		        return 0
+		})
 }
 
 export default connect(
