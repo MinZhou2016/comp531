@@ -1,0 +1,4 @@
+{
+	"netid": "mz22",
+	"mongourl": "mongodb://articlesdb:zhouming20pp@ds145380.mlab.com:45380/inclass"
+}
