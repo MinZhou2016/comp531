@@ -1,5 +1,5 @@
 { 
      "netid": "mz22",
      "frontend": "http://rice-social-website.surge.sh/",
-      "backend": "https://sociawebsiteserver.herokuapp.com/"
+     "backend": "https://sociawebsiteserver.herokuapp.com/"
 }
