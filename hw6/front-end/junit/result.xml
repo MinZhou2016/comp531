@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.79" tests="21" failures="0">
+  <testsuite name="Root Suite" timestamp="2017-03-23T04:41:02" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Validate actions (these are functions that dispatch actions)" timestamp="2017-03-23T04:41:02" tests="6" file="/Users/minzhou/Downloads/hw5 2/src/actions.spec.js" failures="0" time="0.501">
+    <testcase name="Validate actions (these are functions that dispatch actions) resource should be a resource (i.e., mock a request)" time="0.218" classname="resource should be a resource (i.e., mock a request)">
+    </testcase>
+    <testcase name="Validate actions (these are functions that dispatch actions) resource should give me the http error" time="0.142" classname="resource should give me the http error">
+    </testcase>
+    <testcase name="Validate actions (these are functions that dispatch actions) resource should be POSTable" time="0.139" classname="resource should be POSTable">
+    </testcase>
+    <testcase name="Validate actions (these are functions that dispatch actions) should update error message that displaying error mesage to user" time="0.001" classname="should update error message that displaying error mesage to user">
+    </testcase>
+    <testcase name="Validate actions (these are functions that dispatch actions) should update success message that displaying success message to user" time="0" classname="should update success message that displaying success message to user">
+    </testcase>
+    <testcase name="Validate actions (these are functions that dispatch actions) should navigate (to profile, main, or landing)" time="0.001" classname="should navigate (to profile, main, or landing)">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Article actions" timestamp="2017-03-23T04:41:03" tests="2" file="/Users/minzhou/Downloads/hw5 2/src/components/article/articleActions.spec.js" failures="0" time="0.001">
+    <testcase name="Validate Article actions should fetch articles (mocked request)" time="0.001" classname="should fetch articles (mocked request)">
+    </testcase>
+    <testcase name="Validate Article actions should update the search keyword" time="0" classname="should update the search keyword">
+    </testcase>
+  </testsuite>
+  <testsuite name="ArticlesView (component tests)" timestamp="2017-03-23T04:41:04" tests="2" file="/Users/minzhou/Downloads/hw5 2/src/components/article/articlesView.spec.js" failures="0" time="0.004">
+    <testcase name="ArticlesView (component tests) should render articles" time="0.004" classname="should render articles">
+    </testcase>
+    <testcase name="ArticlesView (component tests) should dispatch actions to create a new article" time="0" classname="should dispatch actions to create a new article">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Authentication (involves mocked requests)" timestamp="2017-03-23T04:41:04" tests="3" file="/Users/minzhou/Downloads/hw5 2/src/components/auth/authActions.spec.js" failures="0" time="0.28200000000000003">
+    <testcase name="Validate Authentication (involves mocked requests) should login with the given netid and password successfully" time="0.139" classname="should login with the given netid and password successfully">
+    </testcase>
+    <testcase name="Validate Authentication (involves mocked requests) should show error when the user and password is not right" time="0.141" classname="should show error when the user and password is not right">
+    </testcase>
+    <testcase name="Validate Authentication (involves mocked requests) should log out successfully" time="0.002" classname="should log out successfully">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Profile actions (mocked requests)" timestamp="2017-03-23T04:41:04" tests="2" file="/Users/minzhou/Downloads/hw5 2/src/components/profile/profileActions.spec.js" failures="0" time="0.001">
+    <testcase name="Validate Profile actions (mocked requests) should update headline" time="0" classname="should update headline">
+    </testcase>
+    <testcase name="Validate Profile actions (mocked requests) should fetch the user proile information" time="0.001" classname="should fetch the user proile information">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate reducer (no fetch requests here)" timestamp="2017-03-23T04:41:04" tests="6" file="/Users/minzhou/Downloads/hw5 2/src/reducers.spec.js" failures="0" time="0.001">
+    <testcase name="Validate reducer (no fetch requests here) should initialize state" time="0" classname="should initialize state">
+    </testcase>
+    <testcase name="Validate reducer (no fetch requests here) should state success (for displaying success message to user)" time="0" classname="should state success (for displaying success message to user)">
+    </testcase>
+    <testcase name="Validate reducer (no fetch requests here) should state error (for displaying error message to user)" time="0" classname="should state error (for displaying error message to user)">
+    </testcase>
+    <testcase name="Validate reducer (no fetch requests here) should set the articles" time="0" classname="should set the articles">
+    </testcase>
+    <testcase name="Validate reducer (no fetch requests here) should set the search keyword" time="0" classname="should set the search keyword">
+    </testcase>
+    <testcase name="Validate reducer (no fetch requests here) should filter displayed articles by the search keyword" time="0.001" classname="should filter displayed articles by the search keyword">
+    </testcase>
+  </testsuite>
+</testsuites>
