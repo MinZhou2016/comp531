@@ -4,7 +4,7 @@ import { navToMain, navToProfile } from '../../actions'
 import { logout } from '../auth/authActions'
 
 const Nav = ({username, onProfile,navToProfile,navToMain,logout}) => (
-    <nav className="navbar navbar-inverse navbar-fixed-top">
+    <nav className="navbar navbar-default navbar-fixed-top">
       <div className="container-fluid">
         <div className="navbar-header">
           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
@@ -17,10 +17,10 @@ const Nav = ({username, onProfile,navToProfile,navToMain,logout}) => (
         <div className="collapse navbar-collapse navbar-right" id="myNavbar">
           <ul className="nav navbar-nav">        
               { onProfile ?
-                <li><a href="#" onClick={() => navToMain()}>Home</a></li> :
-                <li><a href="#" onClick={() => navToProfile()}>Edit Your Profile</a></li>
+                <li><a href="#" onClick={() => navToMain()}><i className="fa fa-home" aria-hidden="true"></i> Home</a></li> :
+                <li><a href="#" onClick={() => navToProfile()}><i className="fa fa-user" aria-hidden="true"></i> Profile</a></li>
               }
-              <li><a href="#" onClick={() => logout()}>Log out {username} </a></li>
+              <li><a href="#" onClick={() => logout()}><i className="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
           </ul>
         </div>
       </div>

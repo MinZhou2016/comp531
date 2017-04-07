@@ -58,9 +58,7 @@ const ProfileForm = ({updateProfile,olddob,oldEmail,oldZipcode}) => {
             </div>
 
             <div className="form-group row">
-                <div className="col-sm-9">
-                    <button className="btn btn-primary" type="submit" id="update">Update</button>
-                </div>
+                <button className="btn btn-primary profile-btn" type="submit" id="update">Update</button>
             </div>
         </form>
     )

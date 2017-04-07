@@ -18,10 +18,11 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 		if(newComment && newComment.value){
 			editArticle(_id,newComment.value,-1);
 			newComment.value='';
+			forceActive(_id,true,false);
 		}
 	}
 		return (
-			<div>
+			<div className="article">
 				<div className="media">
 				  <div className="media-left media-top">
 				      <img className="media-object img-circle" src={avatar} alt="Image-coming..." />
@@ -29,24 +30,25 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 				  <div className="media-body">
 				    <h4 className="media-heading">{author}</h4>
 				    <h6 className="media-heading">{articleDate.format('MM-DD-YYYY')} {articleDate.format('HH:mm:ss')}</h6>
-				    <div onInput={(event) => {
-				    	if(event.target.innerText !== text){
-				    		newArticle = event.target.innerText;
-				    	}
-				    }}
+				    <div className="article-content" 
+				         onInput={(event) => {
+				    	    if(event.target.innerText !== text){
+				    		    newArticle = event.target.innerText;
+				    	    }
+				         }}
 					     contentEditable={username === author}
 					     dangerouslySetInnerHTML={{__html: text}}
 					     title={username == author ? 'click to edit' : ''}>
 					</div>
 					{!img ?'':
-						<div className="media-left media-top">
+						<div className="media-left media-top article-avatar">
 					      <img className="media-object img-thumnail" src={img} alt="Image-coming..." />
 					    </div>
 				    }
 				  </div>
 				</div>
 				<div className="btn-group btn-group-justified" role="group" aria-label="...">
-				  <div className="btn-group" role="group">
+				  <div className="btn-left btn-group" role="group">
 				    <button type="button" className="btn btn-default" onClick={() => {
 				    	if(_id == activeId){
 				    		forceActive(_id,!activeShow,activeEdit);
@@ -66,7 +68,7 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 				  </div>
 				  {
 				  	!(username === author)? '':
-				  	<div className="btn-group" role="group">
+				  	<div className="btn-group btn-right" role="group">
 				    	<button type="button" className="btn btn-default" onClick={() => {
 				    		if(newArticle && newArticle !== ''){
 				    			editArticle(_id,newArticle);
@@ -76,25 +78,31 @@ const Article = ({_id,date,avatar,author,username,text,comments,editArticle,acti
 				    </div> 
 				  }
 				</div>
-				<div className='container'>
-					{
-						!(activeId == _id && activeShow) ?'':
-						sortComments.map((comment) =>
-				            <Comment key={comment.commentId} articleId={_id} username={username}
-				              commentId={comment.commentId} author={comment.author} date={comment.date}
-				              text={comment.text} avatar={comment.avatar} />
-				        )
-					}
-				</div>
 				{
 					!(activeId == _id && activeEdit) ?'':
-					<div className="form-group">
-						<textarea id="newComment" className="form-control" rows="2" placeholder="Post your comments here" 
-						ref={(node) => {newComment= node}}>
+					<div className="comment-post">
+						<textarea className="form-control" rows="3" placeholder="Post your comments here" 
+							      ref={(node) => {newComment= node}}>
 						</textarea>
-						<button className="btn btn-primary pull-right" onClick={postNewComment}>Post</button>
+						<div className="post-group">
+							<div className="btn-right">
+								<button className="btn btn-md btn-primary clear-btn" onClick={() => newComment.value=''}>Clear</button>
+								<button className="btn btn-md btn-danger post-btn" onClick={postNewComment}>Post</button>
+							</div>
+						</div>
 					</div>
 				}
+				{
+					!(activeId == _id && activeShow) ?'':
+						sortComments.map((comment) =>
+						    <div className='comment' key={comment.commentId}>
+					            <Comment articleId={_id} username={username}
+					              commentId={comment.commentId} author={comment.author} date={comment.date}
+					              text={comment.text} avatar={comment.avatar} />
+				            </div>
+				    )
+				}
+				
 			</div>
 		)
 }

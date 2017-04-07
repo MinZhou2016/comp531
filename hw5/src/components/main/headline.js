@@ -15,21 +15,21 @@ const HeadLine = ({username,avatar,headline,headlineEditShow,updateHeadline,head
 		}
 	}
 	return(
-		<div>
-			<ul>
-				<li>
-					<img className="img-head img-thumbnail" alt="Image-coming" src={avatar} />
-				</li>
-				<li >Name: <b>{username}</b></li>
-				<li>Headline:</li>
-				<li><b>{headline}</b><span className="glyphicon glyphicon-edit" aria-hidden="true" onClick={() => headlineEdit()}></span></li>
+		<div className="user-info">
+				<div className="user-avatar">
+					<img className="img-head img-circle" alt="Image-coming" src={avatar} />
+				</div>
+				<div className="username">{username}</div>
+				<div className="headline" onClick={() => headlineEdit()}>{headline}</div>
+				<div>
 				{!headlineEditShow ? '':
 					<form className="form-froup" onSubmit={onFormSubmit}>
-						<input className="form-control" type="text" placeholder="Change the headline" ref={(node) => { newHeadline = node }}  />
+						<input className="form-control" type="text" placeholder="Change the headline"
+						 ref={(node) => { newHeadline = node }}  />
 						<input type="submit" className="btn btn-warning btn-xs" value="Update"/>
 					</form>
 				}
-			</ul>
+				</div>
 		</div>
 	)
 }

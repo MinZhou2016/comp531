@@ -53,8 +53,8 @@ const Register = ({register}) => {
                         className="form-control" required/>
                     </div>
     				<div className="col-xs-8 col-md-8" id="register">
-    	                <input type="submit" id="reg_frm_btn" className="btn btn-success" value="Register"/>
-    	                <input type="reset" id="reg_frm_btn" className="btn btn-info" value="Clear"/>
+    	                <input type="submit" id="reg_frm_btn" className="btn btn-info btn-md" value="Register"/>
+    	                <input type="reset" id="reg_frm_btn" className="btn btn-danger btn-md" value="Clear"/>
     	            </div>
                 </div>
                 </fieldset>

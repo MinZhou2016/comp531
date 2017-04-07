@@ -14,20 +14,24 @@ const NewArticle = ({uploadArticle}) => {
     }
 	return(
 			
-		<div>
-            <div><h4>Anything New You Wanna Post</h4></div>
-            <textarea className="form-control" rows="3"
+		<div className="article-post">
+            <div className="post-title"><h4>Anything New You Wanna Post</h4></div>
+            <textarea className="form-control" rows="4"
                 placeholder="Post Something Here..."
                 ref={(node) => {article = node} } >
             </textarea>
-            <form className="form-inline">
-                <div className="form-group">
-                   	<i className="fa fa-picture-o fa-lg pull-left" aria-hidden="true" ></i>
+            <div className="post-group">
+                <div className="Img-choose">
+                   	<label className="ui_button" htmlFor="articleImage">
+                        <i className="fa fa-picture-o fa-lg" aria-hidden="true" ></i>Add Picture
+                    </label>
                     <input type="file" id="articleImage" accept="image/*" />
                 </div>
-                <button className="btn btn-md btn-danger pull-right"
-                    onClick={postArticle}>Post</button>
-            </form>
+                <div className="btn-right">
+                    <button className="btn btn-md btn-primary clear-btn" onClick={() => article.value=''}>Clear</button>
+                    <button className="btn btn-md btn-danger post-btn" onClick={postArticle}>Post</button>
+                </div>
+            </div>
         </div>
 
 	)

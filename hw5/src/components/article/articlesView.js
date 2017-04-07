@@ -11,8 +11,8 @@ const ArticlesView = ({articles,username,searchKeyword}) => {
 	return (
 		<div>
 			<NewArticle />
-			<div className="form-group search">
-				<input type="text" className="form-control" placeholder="Input the keyword" 
+			<div className="search">
+				<input type="text" className="form-control search-bar" placeholder="Search Bar:  Input keyword to search" 
 						ref={(node) => keyword = node } 
 						onChange={() => searchKeyword(keyword.value)}/>
 			</div>

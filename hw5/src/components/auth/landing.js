@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Login from './login'
 import Register from './register'
 const Landing = ({err, suc}) => (
-    <div className="container-fluid">
+    <div className="landing container-fluid">
         <div className="row" id="bar"> 
             <div className="col-xs-6 col-md-6">
                 <h1>  Rice Book</h1>

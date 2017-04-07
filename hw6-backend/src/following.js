@@ -29,7 +29,7 @@ const putFollowing = (req, res) => {
 	}
 	const target = followings.filter(follower => {
 
-            if(follower.username == 'mzee') {
+            if(follower.username == 'mz22') {
             	if(follower.followings.indexOf(username) === -1)
                 follower.followings.push(username);
                 return true;
@@ -45,6 +45,7 @@ const deleteFollowing = (req, res) => {
 		return;
 	}
 	let target = followings.filter(follower =>{
+            
             if(follower.username == 'mz22') {
             	let index = follower.followings.indexOf(username)
             	if(index !== -1)

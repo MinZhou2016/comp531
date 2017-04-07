@@ -7,11 +7,11 @@ const Main = () =>{
 		return (
 			<div className="main container-fluid">
 				<div className="row">
-					<div className="col-md-2">
+					<div className="col-md-3">
 						<HeadLine />
 						<Followers />
 					</div>
-					<div className="col-md-9">
+					<div className="col-md-8">
 						<ArticlesView />
 					</div>
 				</div>

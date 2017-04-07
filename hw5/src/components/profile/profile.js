@@ -6,10 +6,8 @@ import Avatar from './avatar';
 
 const Profile = ({err, suc}) => {
     return (
-        <div>
-            <div className="jumbotron">
-            	<Avatar/>
-            </div>
+        <div className="profile">
+            <Avatar/>
             <div className="container">
                 { err.length == 0 ? '' :
                     <div className="alert alert-danger">
@@ -22,7 +20,7 @@ const Profile = ({err, suc}) => {
                     </div>
                 }
             </div>
-            <div className="container">
+            <div className="profile-form container">
                 <ProfileForm/>
             </div>
         </div>

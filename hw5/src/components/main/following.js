@@ -18,37 +18,44 @@ const Followers = ({followers,error,delFollower,addFollower,showFollowerInput,sh
 	const orderedFollowers = Object.keys(followers).sort().map((f) => followers[f]);
 		return (
 			<div>
-			<ul className="follower">
-				<li><h4>Follower List <i className="fa fa-plus" onClick={() => showInputBar()}></i></h4></li>
-				<li>{!showFollowerInput ? '':
-						<form className="form-froup" onSubmit={onFormSubmit}>
-							<input className="form-control" type="text" placeholder="Input the follower's name" ref={(node) => { newFollower = node }} />
-							<input type="submit" className="btn btn-primary btn-xs" value="Add"/>
-						</form>
-				}</li>
-				<li>{error.length == 0 ? '' :
-                    <div className="alert alert-danger">
-                        {error}
-                    </div>
-                }</li>
-				<li>{ orderedFollowers.map((follower) => 
-			            <div className="row" key={follower.name}>
-					        <div className="col-md-3 col-xs-3">
-					            <img className="img-follower img-thumbnail" alt="Image-coming..." src={ follower.avatar }/>
-					        </div>
-					        <div className="col-md-7 col-xs-7">
-					            <div><strong>{ follower.name }</strong></div>
-					            <div><em>{ follower.headline }</em></div>
-					        </div>
-					        <div className="col-md-2 col-xs-2">
-						        <i className="fa fa-trash pull-right" onClick={() => {
-						        	delFollower(follower.name);
-						        }}></i>
-					        </div>
-					    </div> 
-				)}</li>
-			</ul>
-			</div>       
+				<div className="follower-list">
+					<div className="follwer-header">
+					     <h4>Follower List <i className="fa fa-plus" onClick={() => showInputBar()}></i></h4>
+					</div>
+					{!showFollowerInput ? '':
+						<div>
+							<form className="form-inline" onSubmit={onFormSubmit}>
+								<input className="fol-input" type="text" placeholder="Input the follower's name" ref={(node) => { newFollower = node }} />
+								<input type="submit" className="btn btn-primary fol-btn" value="Add"/>
+							</form>
+						</div>
+					}
+					{error.length == 0 ? '' :
+	                    <div className="alert alert-danger">
+	                        {error}
+	                    </div>
+	                }
+	                <div className="follower-group">
+					{ orderedFollowers.map((follower) => 
+				        <div className="follower" key={follower.name}>
+						    <div className="follower-img">
+						        <img className="fol-img img-thumbnail" alt="Image-coming..." src={ follower.avatar }/>
+						    </div>
+						    <div className="right" >
+							    <div className="information">
+							        <div><strong>{ follower.name }</strong></div>
+							        <div className="fol-headline"><em>{ follower.headline }</em></div>
+							    </div>
+							    <div className="delete">
+								    <button className="del-btn" 
+								    onClick={() => {delFollower(follower.name)}}><i className="fa fa-trash"></i></button>
+							    </div>
+						    </div>
+						</div> 
+					)}
+					</div>
+				</div> 
+			</div>      
 		)
 }
 

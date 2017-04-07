@@ -4,33 +4,44 @@ export function searchKeyword(keyword) {
     return { type: Action.SEARCH_KEYWORD, keyword }
 }
 
-
+//function to upload both image and text message
 export function uploadArticleContainsImage(message,file){
 	return (dispatch) => {
+		
+		//Using Form data to upload the img and message
 		const fd = new window.FormData();
 		fd.append('text', message);
         fd.append('image', file);
         resource('POST', 'article', fd,false)
         .then((response) => {
             const article = response.articles[0]
-            dispatch({ type: Action.ADD_ARTICLE, article })
+            dispatch({
+             type: Action.ADD_ARTICLE,
+              article 
+            })
         })
     }
 }
 
+//function to only upload text message
 export function uploadArticle(message) {
     return (dispatch) => {
         const payload = { text: message }
         resource('POST', 'article', payload)
         .then((response) => {
             const article = response.articles[0]
-            dispatch({ type: Action.ADD_ARTICLE, article })
+            dispatch({ 
+            	type: Action.ADD_ARTICLE,
+            	 article 
+            })
         })
     }
 }
+
 export function showImage(image){
 	return {type: Action.UPLOAD_SUCCESS, image};
 }
+
 
 export function fetchArticles(){
 	return (dispatch, getState) => {
@@ -65,6 +76,7 @@ export function fetchArticles(){
 		})
 	}
 }
+
 export function editArticle(id, text,commentId){
 	return (dispatch) => {
         const payload = { text: text }

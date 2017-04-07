@@ -16,7 +16,7 @@ const Comment= ({date,avatar,author,username,text,articleId,commentId,commentCha
 				  <div className="media-body">
 				    <h4 className="media-heading">{author}</h4>
 				    <h6 className="media-heading">{commentDate.format('MM-DD-YYYY')} {commentDate.format('HH:mm:ss')}</h6>
-				    <div onInput={(event) => {
+				    <div className="input-comment" onInput={(event) => {
 				    	if(event.target.innerText !== text){
 				    		newComment = event.target.innerText;
 				    	}
@@ -27,7 +27,7 @@ const Comment= ({date,avatar,author,username,text,articleId,commentId,commentCha
 					</div>
 					{
 						!(username === author)?'':
-						<button type="button" className="btn btn-danger" onClick={() => {
+						<button type="button" className="btn btn-danger btn-xs pull-right" onClick={() => {
 							if(newComment !== ''){
 								editArticle(articleId,newComment,commentId);
 								newComment ='';
