@@ -1,0 +1,19 @@
+
+> starter@1.0.0 e2e:base /Users/minzhou/Downloads/hw6/front-end
+> mocha --opts e2e/mocha.opts e2e/*.spec.js "--reporter" "xunit"
+
+<testsuite name="Mocha Tests" tests="13" failures="0" errors="0" skipped="0" timestamp="Wed, 05 Apr 2017 01:05:04 GMT" time="22.851">
+<testcase classname="End-to-End Test: Register new user" name="-should return success of the register process" time="0.349"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should log in as the test user" time="0.55"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should create new article and validate article appears in feed" time="1.425"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should edit an article and validate the article text has updated" time="1.331"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should update the status headline and verify the change" time="1.369"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should count the number of followed users" time="0.53"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should add the user &quot;Follower&quot; to the list of followed user and verify the count increases by one" time="1.295"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should remove the user &quot;Follower&quot; from the list of followed user and verify the count decreases by one" time="1.055"/>
+<testcase classname=" End-to-End Test: MainPage" name="-should search for &quot;Only One Article Like This&quot; and verify only one article show, and verify the author" time="1.327"/>
+<testcase classname="End-to-End Test: Update Profile" name="-should update the email and verify" time="1.552"/>
+<testcase classname="End-to-End Test: Update Profile" name="-should update the user zipcode and verify" time="1.485"/>
+<testcase classname="End-to-End Test: Update Profile" name="-should update the user password, verify a &quot;will not change&quot; message is returned" time="1.628"/>
+<testcase classname="shutdown" name="now" time="0.079"/>
+</testsuite>

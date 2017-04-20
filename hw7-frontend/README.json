@@ -1,0 +1,5 @@
+{ 
+     "netid": "mz22",
+     "frontend": "http://stale-committee.surge.sh/",
+     "backend": "https://ricesocialwebs.herokuapp.com/"
+}
