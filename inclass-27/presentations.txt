@@ -1,0 +1,13 @@
+1. Which presentation was the most polished and delivered, and why?
+  
+  answer: I think the presentation about the cloudinary and web application are delivered. The topic is good and the author give lots of 		basic knowledge and good examples. I believe his opinion at the end.
+
+ 2. Which topic did you learn the most from and what did you learn?
+
+  answer: I learned a lot from the presentation about react and react native. I got the basic knowledge of how react nativ works and how 
+  			to quick start to use it and where react native is used in real life. 
+
+3. Which talk did you like the best and why?
+
+ answer: I like the topic about react and angular the best. The PPT looks good and the speaker is good. He can clearly claims his views 
+ 			and I got lots of knowledge through this presentation. Besides I am interested of this topic because I wanna know more about angular.
