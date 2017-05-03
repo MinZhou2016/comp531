@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.067" tests="5" failures="0">
+  <testsuite name="Root Suite" timestamp="2017-04-06T02:34:45" tests="0" failures="0" time="0">
+  </testsuite>
+  <testsuite name="Validate Article functionality" timestamp="2017-04-06T02:34:45" tests="4" file="/Users/minzhou/Downloads/hw6/back-end/src/articles.spec.js" failures="0" time="0.058">
+    <testcase name="Validate Article functionality should give me three or more articles" time="0.032" classname="should give me three or more articles">
+    </testcase>
+    <testcase name="Validate Article functionality should return an article with a specified id" time="0.007" classname="should return an article with a specified id">
+    </testcase>
+    <testcase name="Validate Article functionality should return nothing for an invalid id" time="0.003" classname="should return nothing for an invalid id">
+    </testcase>
+    <testcase name="Validate Article functionality should add an article and test the new id and text" time="0.016" classname="should add an article and test the new id and text">
+    </testcase>
+  </testsuite>
+  <testsuite name="Validate Profile functionality" timestamp="2017-04-06T02:34:45" tests="1" file="/Users/minzhou/Downloads/hw6/back-end/src/profile.spec.js" failures="0" time="0.009">
+    <testcase name="Validate Profile functionality should update headline after use PUT" time="0.009" classname="should update headline after use PUT">
+    </testcase>
+  </testsuite>
+</testsuites>

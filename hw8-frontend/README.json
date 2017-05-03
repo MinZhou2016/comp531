@@ -1,0 +1,5 @@
+{ 
+     "netid": "mz22",
+     "frontend": "http://rice-social-webs.surge.sh/",
+     "backend": "https://final-social-website.herokuapp.com/"
+}
